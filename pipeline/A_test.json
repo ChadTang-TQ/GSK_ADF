@@ -1,0 +1,26 @@
+{
+	"name": "A_test",
+	"properties": {
+		"activities": [
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "bb",
+					"value": "456"
+				}
+			}
+		],
+		"variables": {
+			"aa": {
+				"type": "Array"
+			},
+			"bb": {
+				"type": "Array"
+			}
+		},
+		"annotations": []
+	}
+}

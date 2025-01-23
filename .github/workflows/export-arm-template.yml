@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js environment  # 设置 Node.js 环境
         uses: actions/setup-node@v3.4.1  # 使用 GitHub Actions 的 setup-node 动作
         with:  # 传递给动作的参数
-          node-version: 20.x  # 指定 Node.js 的版本
+          node-version: 18.x  # 指定 Node.js 的版本
                               # 这里使用 18.x，18以下不支持
 
       - name: Install dependencies  # 安装依赖
@@ -31,7 +31,7 @@ jobs:
 
       - name: Export ARM Template  # 导出 ARM 模板
         run: |  # 使用多行命令
-          npm run build export ${{github.workspace}}/ /subscriptions${{ secrets.AZURE_SUBSCRIPTION_ID }}resourceGroups${{ secrets.AZURE_RESOURCE_GROUP }}providers/Microsoft.DataFactory/factories${{ secrets.ADF_NAME }} "ExportedArmTemplate"  # 指定导出的 ARM 模板文件夹名称
+          npm run build export ${{github.workspace}}/ /subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/${{ secrets.AZURE_RESOURCE_GROUP }}/providers/Microsoft.DataFactory/factories${{ secrets.ADF_NAME }} "ExportedArmTemplate"  # 指定导出的 ARM 模板文件夹名称
         working-directory: ./  # 指定命令运行的工作目录
                                # 如果 npm 脚本在子目录中，需要修改为对应的路径
 

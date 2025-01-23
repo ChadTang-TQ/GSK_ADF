@@ -21,8 +21,8 @@ jobs:
       - name: Setup Node.js environment  # 设置 Node.js 环境
         uses: actions/setup-node@v3.4.1  # 使用 GitHub Actions 的 setup-node 动作
         with:  # 传递给动作的参数
-          node-version: 14.x  # 指定 Node.js 的版本
-                              # 这里使用 14.x，可以根据需要选择其他版本
+          node-version: 18.x  # 指定 Node.js 的版本
+                              # 这里使用 18.x，18以下不支持
 
       - name: Install dependencies  # 安装依赖
         run: npm install  # 执行 npm install 命令安装项目依赖
